@@ -31,16 +31,16 @@ require 'phpmailer/src/SMTP.php';
         $mess = trim(strip_tags($_POST["question"]));
       }
 $mail->setFrom('savchuk.elenas@gmail.com');
-    $mail->addAddress($email);
+    $mail->addAddress('savchuk.lens@gmail.com');
 
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
 
     $mail->Subject = 'Це лист на практику!';
 
-    $message = '<p><strong>Імя: </strong>'.$name.'</p>';
-    $message = '<p><strong>Пошта: </strong>'.$email.'</p>';
-    $message = '<p><strong>Повідомлення: </strong>'.$mess.'</p>';
+    $message = '<p><strong>Імя: </strong>'.$name.'</p> <br>';
+    $message .='<p><strong>Пошта: </strong>'.$email.'</p> <br>';
+    $message .='<p><strong>Повідомлення: </strong>'.$mess.'</p>';
 
     $mail->Body = $message;
 
